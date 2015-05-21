@@ -14,12 +14,6 @@ public class DisplayMessageActivity extends ActionBarActivity {
         setContentView(R.layout.activity_display_message);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_display_message, menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
