@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+
 public class DisplayMessageActivity extends ActionBarActivity {
 
     @Override
@@ -22,11 +23,12 @@ public class DisplayMessageActivity extends ActionBarActivity {
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(message);
+        setContentView(textView);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment()).commit();
-        }
+//        if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(R.id.container, new PlaceholderFragment()).commit();
+//        }
     }
 
 
@@ -50,7 +52,7 @@ public class DisplayMessageActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_display_message, container, false);
+            View rootView = inflater.inflate(R.layout.activity_display_message, container, false);
             return rootView;
         }
     }
