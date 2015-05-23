@@ -5,22 +5,23 @@
      tools:context=".MainActivity">
     <TextView
         android:id="@+id/image_title"
-        android:text="@string/test-image_title"
+        android:text="@string/testimagetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/image_date"
-        android:text="@string/test-image_date"
+        android:text="@string/testimagedate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/imageDisplay"
         android:src="@drawable/mtsthelens_oli_2015110_lrg"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/testimagetitle"/>
     <TextView
         android:id="@+id/image_description"
-        android:text="@string/test-image_description"
+        android:text="@string/testimagedescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
