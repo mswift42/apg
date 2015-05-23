@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Hfatwo</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="test-image_title">Coronal Loops Over a Sunspot Group</string>
+    <string name="test-image_date">Fri, 22 May 2015 09:55 EDT</string>
+    <string name="test-image_description">The Atmospheric Imaging Assembly (AIA) instrument on NASA\'s
+        Solar Dynamics Observatory images the solar atmosphere in multiple wavelengths to
+        link changes in the surface to interior changes. When AIA images are sharpened a bit,
+        such as this AIA 171Å channel image, the magnetic field can be readily visualized through
+        the bright, thin strands that area.</string>
+</resources>
