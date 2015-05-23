@@ -2,11 +2,26 @@
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-     tools:context=".QuizActivity">
+     tools:context=".QuizActivity"
+    android:gravity="center">
 
-    <TextView android:text="@string/questiontext"
-        android:id="@+id/geoquestion"
+    <TextView android:text="@string/question_text" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"/>
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/true_button"
+            android:text="@string/true_button"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/false_button"
+            android:text="@string/false_button"/>
+    </LinearLayout>
 
 </LinearLayout>
