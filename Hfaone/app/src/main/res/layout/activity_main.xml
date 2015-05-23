@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:onClick="showHaiku"/>
     <TextView android:text="@string/haiku_text"
-        android:id="@+id/haiku_text"
+        android:id="@+id/haiku"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"/>
