@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
      tools:context=".QuizActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+    <TextView android:text="@string/questiontext"
+        android:id="@+id/geoquestion"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
