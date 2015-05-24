@@ -37,7 +37,7 @@
         android:id="@+id/prev_button"
         android:text="@string/prev_button"
         android:drawableLeft="@drawable/ic_action_back"
-        android:padding="4dp"/>
+        android:drawablePadding="4dw" />
 
     <Button
         android:layout_width="wrap_content"
