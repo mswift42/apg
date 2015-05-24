@@ -31,6 +31,13 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prev_button"
+        android:text="@string/prev_button"
+        android:drawableLeft="@drawable/ic_action_back"
+        android:padding="4dp"/>
 
     <Button
         android:layout_width="wrap_content"
