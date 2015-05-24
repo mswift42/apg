@@ -24,10 +24,16 @@ public class QuizActivity extends ActionBarActivity {
             new TrueFalse(R.string.question_asia, true),
     };
 
+    private int mCurrentIndex = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        mQuestionTextView = (TextView) findViewById(R.id.quiz_question);
+        int question = mQuestionBank[mCurrentIndex].getQuestion();
+        mQuestionTextView.setText(question);
         mTrueButton = (Button) findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(new View.OnClickListener(){
             @Override
