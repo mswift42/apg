@@ -2,6 +2,7 @@ package com.example.severin.geoquiz;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +15,9 @@ public class QuizActivity extends ActionBarActivity {
     private Button mTrueButton;
     private Button mFalseButton;
     private Button mNextButton;
+    private Button mPrevButton;
     private TextView mQuestionTextView;
+    private static final String TAG = "QuizActivity";
 
     private TrueFalse[] mQuestionBank = new TrueFalse[] {
             new TrueFalse(R.string.question_oceans, true),
@@ -48,10 +51,11 @@ public class QuizActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+        Log.d(TAG, "onCreate(Bundle) called");
 
         mQuestionTextView = (TextView) findViewById(R.id.quiz_question);
         updateQuestion();
-        mQuestionTextView.setOnClickListener(new View.OnClickListener(){
+        mQuestionTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
@@ -77,6 +81,14 @@ public class QuizActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                updateQuestion();
+            }
+        });
+        mPrevButton = (Button) findViewById(R.id.prev_button);
+        mPrevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = mQuestionBank.length - ((mCurrentIndex + 1) % mQuestionBank.length);
                 updateQuestion();
             }
         });
