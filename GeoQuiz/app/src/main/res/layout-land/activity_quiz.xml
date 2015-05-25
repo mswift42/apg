@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
+        android:layout_gravity="center_horizontal|center_vertical"
         android:orientation="horizontal">
         <Button
             android:layout_width="wrap_content"
@@ -25,19 +26,14 @@
             android:id="@+id/false_button"
             android:text="@string/false_button"/>
     </LinearLayout>
-    <LinearLayout
-        android:padding="12dp"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/next_button"
         android:text="@string/next_button"
+        android:layout_gravity="bottom|right"
         android:drawableRight="@drawable/ic_action_forward"
         android:drawablePadding="4dp"/>
 
-    </LinearLayout>
 </FrameLayout>
