@@ -17,6 +17,7 @@ public class QuizActivity extends ActionBarActivity {
     private Button mNextButton;
     private TextView mQuestionTextView;
     private static final String TAG = "QuizActivity";
+    private static final String KEY_INDEX = "index";
 
     private TrueFalse[] mQuestionBank = new TrueFalse[] {
             new TrueFalse(R.string.question_oceans, true),
@@ -85,6 +86,14 @@ public class QuizActivity extends ActionBarActivity {
         });
 
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        Log.i(TAG, "onSaveInstanceState"):
+        savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+    }
+
     @Override
     public void onStart() {
         super.onStart();
