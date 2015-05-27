@@ -9,6 +9,8 @@ import android.widget.TextView;
 public class CheatActivity  extends Activity {
     public static final String EXTRA_ANSWER_IS_TRUE =
             "com.example.severin.android.geoquiz.answer_is_true";
+    public static final String EXTRA_ANSWER_SHOWN =
+            "com.example.severin.android.geoquiz.answer_shown";
 
     private boolean mAnswerIsTrue;
     private TextView mAnswerTextView;
