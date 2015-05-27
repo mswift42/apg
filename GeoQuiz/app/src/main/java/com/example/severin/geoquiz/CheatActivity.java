@@ -30,7 +30,7 @@ public class CheatActivity  extends Activity {
         setContentView(R.layout.activity_cheat);
         mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
 
-
+        setAnswerShownResult(false);
         mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
         mShowAnswer = (Button) findViewById(R.id.showAnswerButton);
         mShowAnswer.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +41,7 @@ public class CheatActivity  extends Activity {
                 } else {
                     mAnswerTextView.setText(R.string.false_button);
                 }
+                setAnswerShownResult(true);
             }
         });
     }
