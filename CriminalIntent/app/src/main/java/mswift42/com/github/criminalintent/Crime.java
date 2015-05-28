@@ -1,7 +1,14 @@
 package mswift42.com.github.criminalintent;
 
-/**
- * Created by severin on 28/05/15.
- */
+import java.util.UUID;
+
 public class Crime {
+    private UUID mId;
+    private String mTitle;
+
+    public Crime() {
+        mId = UUID.randomUUID();
+    }
+
+
 }
