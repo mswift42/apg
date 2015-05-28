@@ -1,4 +1,6 @@
 package mswift42.com.github.criminalintent;
 
-public class CrimeFragment {
+import android.support.v4.app.Fragment;
+
+public class CrimeFragment extends Fragment {
 }
