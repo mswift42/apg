@@ -1,9 +1,6 @@
 package mswift42.com.github.criminalintent;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 
 
 public class CrimeActivity extends SingleFragmentActivity {
