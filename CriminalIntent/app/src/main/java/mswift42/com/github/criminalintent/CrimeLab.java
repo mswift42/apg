@@ -2,15 +2,17 @@ package mswift42.com.github.criminalintent;
 
 import android.content.Context;
 
-/**
- * Created by severin on 30/05/15.
- */
+import java.util.ArrayList;
+import java.util.UUID;
+
 public class CrimeLab {
+    private ArrayList<Crime> mCrimes;
     private static CrimeLab sCrimeLab;
     private Context mAppContext;
 
     private CrimeLab(Context appContext) {
         mAppContext = appContext;
+        mCrimes = new ArrayList<Crime>();
     }
 
     public static CrimeLab get(Context c) {
@@ -18,5 +20,18 @@ public class CrimeLab {
             sCrimeLab = new CrimeLab(c.getApplicationContext());
         }
         return sCrimeLab;
+    }
+
+    public ArrayList<Crime> getCrimes() {
+        return mCrimes;
+    }
+
+    public Crime getCrime(UUID id) {
+        for (Crime c : mCrimes) {
+            if (c.getId().equals(id)) {
+                return c;
+            }
+        }
+        return null;
     }
 }
