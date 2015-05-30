@@ -1,6 +1,11 @@
 package mswift42.com.github.criminalintent;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.UUID;
 
 public class Crime {
@@ -19,6 +24,10 @@ public class Crime {
 
     public Date getDate() {
         return mDate;
+    }
+    public String formatDate() {
+        SimpleDateFormat dateformat = new SimpleDateFormat("EEEE, MMM d, yyyy");
+        return dateformat.format(mDate);
     }
 
     public void setDate(Date date) {
