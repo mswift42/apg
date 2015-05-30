@@ -1,4 +1,11 @@
 package mswift42.com.github.criminalintent;
 
-public class CrimeListActivity {
+import android.support.v4.app.Fragment;
+
+public class CrimeListActivity extends SingleFragmentActivity {
+
+    @Override
+    protected Fragment createFragment(){
+        return new CrimeListFragment();
+    }
 }
