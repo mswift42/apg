@@ -22,6 +22,16 @@ public class CrimeFragment extends Fragment {
     public static final String EXTRA_CRIME_ID =
             "mswift42.com.github.criminalintent.crime_id";
 
+    public static CrimeFragment newInstance(UUID crimeId) {
+        Bundle args = new Bundle();
+        args.putSerializable(EXTRA_CRIME_ID, crimeId);
+
+        CrimeFragment fragment = new CrimeFragment();
+        fragment.setArguments(args);
+
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
