@@ -12,16 +12,21 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
+import java.util.UUID;
+
 public class CrimeFragment extends Fragment {
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+    public static final String EXTRA_CRIME_ID =
+            "mswift42.com.github.criminalintent.crime_id";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mCrime = new Crime();
+        UUID crimeId = (UUID)getActivity().getIntent()
+                .getSerializableExtra(EXTRA_CRIME_ID);
     }
 
     @Override
