@@ -1,4 +1,6 @@
 package mswift42.com.github.criminalintent;
 
-public class DatePickerFragment {
+import android.support.v4.app.DialogFragment;
+
+public class DatePickerFragment extends DialogFragment {
 }
