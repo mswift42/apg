@@ -22,7 +22,9 @@ public class CrimeFragment extends Fragment {
     private CheckBox mSolvedCheckBox;
     public static final String EXTRA_CRIME_ID =
             "mswift42.com.github.criminalintent.crime_id";
-    public static final String DIALOG_DATE = "date";
+    private static final String DIALOG_DATE = "date";
+    private static final int REQUEST_DATE = 0;
+
 
     public static CrimeFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
@@ -73,6 +75,7 @@ public class CrimeFragment extends Fragment {
                         .getSupportFragmentManager();
                 DatePickerFragment dialog = DatePickerFragment
                         .newInstance(mCrime.getDate());
+                dialog.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
                 dialog.show(fm, DIALOG_DATE);
             }
         });

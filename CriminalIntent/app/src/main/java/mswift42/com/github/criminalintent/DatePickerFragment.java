@@ -5,9 +5,11 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
+import android.widget.DatePicker;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class DatePickerFragment extends DialogFragment {
     public static final String EXTRA_DATE =
@@ -35,6 +37,14 @@ public class DatePickerFragment extends DialogFragment {
 
         View v = getActivity().getLayoutInflater()
                 .inflate(R.layout.dialog_date, null);
+        DatePicker datePicker = (DatePicker)v.findViewById(R.id.dialog_date_datePicker);
+        datePicker.init(year, month, day, new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker view, int year, int month, int day) {
+                mDate = new GregorianCalendar(year, month, day).getTime();
+                getArguments().putSerializable(EXTRA_DATE, mDate);
+            }
+        });
         return new AlertDialog.Builder(getActivity())
                 .setView(v)
                 .setTitle(R.string.date_picker_title)
