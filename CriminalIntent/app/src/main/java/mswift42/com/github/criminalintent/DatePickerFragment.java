@@ -70,6 +70,6 @@ public class DatePickerFragment extends DialogFragment {
         Intent intent = new Intent();
         intent.putExtra(EXTRA_DATE, mDate);
         getTargetFragment()
-                .onActivityResult(getTargetRequestCode(), resultcode, i);
+                .onActivityResult(getTargetRequestCode(), resultcode, intent);
     }
 }
