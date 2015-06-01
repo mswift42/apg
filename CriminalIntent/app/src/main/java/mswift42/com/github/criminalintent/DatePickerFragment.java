@@ -6,7 +6,23 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
 
+import java.util.Date;
+
 public class DatePickerFragment extends DialogFragment {
+    public static final String EXTRA_DATE =
+            "mswift42.com.github.criminalintent.date";
+    private Date mDate;
+
+    public static DatePickerFragment newInstance(Date date) {
+        Bundle args = new Bundle();
+        args.putSerializable(EXTRA_DATE, date);
+
+        DatePickerFragment fragment = new DatePickerFragment();
+        fragment.setArguments(args);
+
+        return fragment;
+    }
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         View v = getActivity().getLayoutInflater()
