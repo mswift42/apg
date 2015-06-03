@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HalloMond</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="hellomoon_play">Abspielen</string>
+    <string name="hellomoon_stop">Stop</string>
+    <string name="hellomoon_description">Neil Armstrong erster Schritt auf dem Mond</string>
+</resources>
