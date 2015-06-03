@@ -11,7 +11,7 @@ import android.support.v7.app.ActionBarActivity;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class CrimePagerActivity extends FragmentActivity {
+public class CrimePagerActivity extends ActionBarActivity {
     private ViewPager mViewPager;
     private ArrayList<Crime> mCrimes;
 
