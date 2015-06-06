@@ -3,6 +3,7 @@ package mswift42.com.github.criminalintent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -51,6 +52,9 @@ public class CrimeListFragment extends ListFragment {
                 Intent intent = new Intent(getActivity(), CrimePagerActivity.class);
                 intent.putExtra(CrimeFragment.EXTRA_CRIME_ID, crime.getId());
                 startActivityForResult(intent, 0);
+                return true;
+            case R.id.menu_item_show_subtitle:
+                ((ActionBarActivity)getActivity()).getSupportActionBar().setSubtitle(R.string.subtitle);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
