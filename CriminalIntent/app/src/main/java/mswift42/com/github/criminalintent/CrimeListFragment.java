@@ -60,9 +60,11 @@ public class CrimeListFragment extends ListFragment {
             case R.id.menu_item_show_subtitle:
                 if (((ActionBarActivity)getActivity()).getSupportActionBar().getSubtitle() == null) {
                     ((ActionBarActivity) getActivity()).getSupportActionBar().setSubtitle(R.string.subtitle);
+                    mSubtitleVisible = true;
                     item.setTitle(R.string.hide_subtitle);
                 } else {
                     ((ActionBarActivity)getActivity()).getSupportActionBar().setSubtitle(null);
+                    mSubtitleVisible = false;
                     item.setTitle(R.string.show_subtitle);
                 }
                 return true;
