@@ -31,6 +31,9 @@ public class CrimeListFragment extends ListFragment {
 
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
+
+        setRetainInstance(true);
+        mSubtitleVisible = false;
     }
     @Override
     public void onResume() {
