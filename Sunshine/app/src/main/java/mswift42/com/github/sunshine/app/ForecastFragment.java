@@ -1,5 +1,6 @@
 package mswift42.com.github.sunshine.app;
 
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -44,7 +45,7 @@ public class ForecastFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_refresh) {
-            FetchWeatherTask fw = new FetchWeatherTask();
+            FetchWeatherTask fw = new FetchWeatherTask("94403,US");
             fw.execute();
             return  true;
         }
@@ -74,6 +75,10 @@ public class ForecastFragment extends Fragment {
     public class FetchWeatherTask extends AsyncTask<Void, Void, Void> {
              // These two need to be declared outside the try/catch
         // so that they can be closed in the finally block.
+        String mPostalCode;
+        public FetchWeatherTask(String postalcode) {
+            mPostalCode = postalcode;
+        }
 
         private final String LOG_TAG = FetchWeatherTask.class.getSimpleName();
 
@@ -89,6 +94,18 @@ public class ForecastFragment extends Fragment {
             // Construct the URL for the OpenWeatherMap query
             // Possible parameters are avaiable at OWM's forecast API page, at
             // http://openweathermap.org/API#forecast
+            Uri.Builder ubi = new Uri.Builder();
+            ubi.scheme("http")
+                    .authority("api.openweathermap.org")
+                    .appendPath("data")
+                    .appendPath("2.5")
+                    .appendPath("forecast")
+                    .appendPath("daily")
+                    .query(mPostalCode)
+                    .appendQueryParameter("mode", "json")
+                    .appendQueryParameter("units", "metric")
+                    .appendQueryParameter("cnt", "7");
+
             URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7");
 
             // Create the request to OpenWeatherMap, and open the connection
