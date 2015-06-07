@@ -45,7 +45,7 @@ public class ForecastFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_refresh) {
-            FetchWeatherTask fw = new FetchWeatherTask("94403,US");
+            FetchWeatherTask fw = new FetchWeatherTask("94043");
             fw.execute();
             return  true;
         }
@@ -101,12 +101,14 @@ public class ForecastFragment extends Fragment {
                     .appendPath("2.5")
                     .appendPath("forecast")
                     .appendPath("daily")
-                    .query(mPostalCode)
+                    .appendQueryParameter("q",mPostalCode)
                     .appendQueryParameter("mode", "json")
                     .appendQueryParameter("units", "metric")
                     .appendQueryParameter("cnt", "7");
 
-            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7");
+//            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7");
+            URL url = new URL(ubi.build().toString());
+            Log.d(LOG_TAG, ubi.build().toString());
 
             // Create the request to OpenWeatherMap, and open the connection
             urlConnection = (HttpURLConnection) url.openConnection();
