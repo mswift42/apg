@@ -52,7 +52,7 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ArrayList<String> mockStrings = new ArrayList<String>() {{
+        ArrayList<String> weekForecast = new ArrayList<String>() {{
         add("Today - Sunny - 88 - 63");
         add("Tomorrow - Foggy - 70 / 46");
         add("Weds - Cloudy - 72 / 63");
@@ -61,7 +61,7 @@ public class ForecastFragment extends Fragment {
         add("Sat - Sunny - 76 / 68");}
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast,
-                R.id.list_item_forecast_textview, mockStrings);
+                R.id.list_item_forecast_textview, weekForecast);
         View rootView  = inflater.inflate(R.layout.fragment_main, container, false);
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
         listView.setAdapter(adapter);
