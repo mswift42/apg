@@ -106,7 +106,6 @@ public class ForecastFragment extends Fragment {
                     .appendQueryParameter("units", "metric")
                     .appendQueryParameter("cnt", "7");
 
-//            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7");
             URL url = new URL(ubi.build().toString());
             Log.d(LOG_TAG, ubi.build().toString());
 
