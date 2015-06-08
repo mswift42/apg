@@ -35,6 +35,7 @@ import java.util.List;
  * A placeholder fragment containing a simple view.
  */
 public class ForecastFragment extends Fragment {
+    private ArrayAdapter<String> mForecastAdapter;
 
     public ForecastFragment() {
     }
