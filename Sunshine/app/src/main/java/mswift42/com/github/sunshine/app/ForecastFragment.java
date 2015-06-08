@@ -72,7 +72,7 @@ public class ForecastFragment extends Fragment {
         add("Fri - Foggy - 60 / 48");
         add("Sat - Sunny - 76 / 68");}
         };
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast,
+        ArrayAdapter<String> mForecastAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast,
                 R.id.list_item_forecast_textview, weekForecast);
         View rootView  = inflater.inflate(R.layout.fragment_main, container, false);
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
