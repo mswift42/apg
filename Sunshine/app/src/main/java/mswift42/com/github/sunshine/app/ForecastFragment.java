@@ -76,7 +76,7 @@ public class ForecastFragment extends Fragment {
                 R.id.list_item_forecast_textview, weekForecast);
         View rootView  = inflater.inflate(R.layout.fragment_main, container, false);
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
-        listView.setAdapter(adapter);
+        listView.setAdapter(mForecastAdapter);
 
 
         return rootView;
@@ -281,6 +281,16 @@ public class ForecastFragment extends Fragment {
 
             // This will only happen if there was an error getting or parsing the forecast.
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(String[] strings) {
+            if (strings != null) {
+                mForecastAdapter.clear();
+                for (String i : strings) {
+                    mForecastAdapter.add(i);
+                }
+            }
         }
     }
 }
