@@ -12,7 +12,10 @@ public class WeatherDataParser {
     public static double getMaxTemperatureForDay(String weatherJsonStr, int dayIndex)
             throws JSONException {
         // TODO: add parsing code here
-        return -1;
+        JSONObject object = new JSONObject(weatherJsonStr);
+        JSONArray arr = object.getJSONArray("list");
+
+        return arr.getJSONObject(dayIndex).getJSONObject("temp").getDouble("max");
     }
 
 }
