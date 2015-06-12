@@ -1,10 +1,12 @@
 package mswift42.com.github.sunshine.app;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -13,6 +15,13 @@ import android.view.ViewGroup;
 public class DetailActivityFragment extends Fragment {
 
     public DetailActivityFragment() {
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        TextView textView = new TextView(getActivity());
+        Intent intent = getActivity().getIntent();
     }
 
     @Override
