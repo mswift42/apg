@@ -9,7 +9,7 @@
                 tools:context="mswift42.com.github.sunshine.app.DetailActivityFragment">
 
     <TextView
-        android:text="@string/hello_world"
+        android:id="@+id/forecast_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
