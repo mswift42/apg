@@ -3,6 +3,7 @@ package mswift42.com.github.sunshine.app;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class DetailActivityFragment extends Fragment {
+public class DetailActivityFragment extends ActionBarActivity {
 
     public DetailActivityFragment() {
     }
@@ -20,8 +21,8 @@ public class DetailActivityFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView textView = new TextView(getActivity());
         Intent intent = getActivity().getIntent();
+
     }
 
     @Override
