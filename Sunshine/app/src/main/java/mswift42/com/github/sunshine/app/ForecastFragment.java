@@ -34,8 +34,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 /**
@@ -61,11 +59,7 @@ public class ForecastFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_refresh) {
-            FetchWeatherTask fw = new FetchWeatherTask();
-            String location = PreferenceManager.getDefaultSharedPreferences(getActivity())
-                    .getString(getString(R.string.pref_location_key),
-                            getString(R.string.pref_location_default));
-            fw.execute(location);
+            updateWeather();
             return  true;
         }
         return super.onOptionsItemSelected(item);
@@ -74,14 +68,6 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ArrayList<String> weekForecast = new ArrayList<String>() {{
-        add("Today - Sunny - 88 - 63");
-        add("Tomorrow - Foggy - 70 / 46");
-        add("Weds - Cloudy - 72 / 63");
-        add("Thurs - Rainy - 64 / 51");
-        add("Fri - Foggy - 60 / 48");
-        add("Sat - Sunny - 76 / 68");}
-        };
         mForecastAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast,
                 R.id.list_item_forecast_textview, new ArrayList<String>());
         View rootView  = inflater.inflate(R.layout.fragment_main, container, false);
