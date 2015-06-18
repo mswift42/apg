@@ -2,6 +2,7 @@ package mswift42.com.github.sunshine.app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.preference.Preference;
@@ -63,7 +64,7 @@ public class ForecastFragment extends Fragment {
             FetchWeatherTask fw = new FetchWeatherTask();
             String location = PreferenceManager.getDefaultSharedPreferences(getActivity())
                     .getString(getString(R.string.pref_location_key),
-                    getString(R.string.pref_location_default));
+                            getString(R.string.pref_location_default));
             fw.execute(location);
             return  true;
         }
@@ -97,6 +98,13 @@ public class ForecastFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    private void updateWeather() {
+        FetchWeatherTask weatherTask = new FetchWeatherTask();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String location = prefs.getString(getString(R.string.pref_location_key), getString(R.string.pref_location_default));
+        weatherTask.execute(location);
     }
     public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
 
