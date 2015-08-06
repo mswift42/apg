@@ -1,7 +1,7 @@
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
+          tools:context="com.example.android.sunshine.app.DetailActivity" tools:ignore="MergeRootFrame"
           android:id="@+id/container"
-          android:name="mswift42.com.github.sunshine.app.DetailActivityFragment"
           tools:layout="@layout/fragment_detail"
           android:layout_width="match_parent"
           android:layout_height="match_parent"/>
