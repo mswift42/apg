@@ -19,9 +19,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Beer Button"
+        android:text="@string/find_beer"
         android:id="@+id/find_beer"
         android:layout_below="@+id/color"
         android:layout_alignLeft="@+id/color"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/find_beer"
+        android:layout_below="@+id/find_beer"
+        android:layout_marginTop="18dp"
+        android:text="@string/brands"/>
 </RelativeLayout>
