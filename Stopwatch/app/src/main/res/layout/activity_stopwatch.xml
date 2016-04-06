@@ -12,5 +12,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/watchtimer"
+        android:textSize="80sp"
+        android:text="00:00:00"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/watchtimer"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/start_button"
+        android:layout_marginTop="20dp"
+        android:text="@string/startbutton" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start_button"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/stop_button"
+        android:text="@string/stopbutton"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stop_button"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/reset_button"
+        android:text="@string/resetbutton"/>
 </RelativeLayout>
