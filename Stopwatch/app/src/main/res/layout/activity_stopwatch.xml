@@ -24,7 +24,8 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/start_button"
         android:layout_marginTop="20dp"
-        android:text="@string/startbutton" />
+        android:text="@string/startbutton"
+        android:onClick="onClickStart"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +33,8 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/stop_button"
-        android:text="@string/stopbutton"/>
+        android:text="@string/stopbutton"
+        android:onClick="onClickStop"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,5 +42,6 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/reset_button"
-        android:text="@string/resetbutton"/>
+        android:text="@string/resetbutton"
+        android:onClick="onClickReset"/>
 </RelativeLayout>
