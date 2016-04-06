@@ -10,7 +10,6 @@ import android.view.View
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.content_create_message.*
-import kotlin.jvm.javaClass
 
 class CreateMessageActivity : AppCompatActivity() {
 
@@ -23,7 +22,11 @@ class CreateMessageActivity : AppCompatActivity() {
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener {
             val text = message.text.toString()
-            startActivity(Intent(this, ReceiveMessageActivity::class.java).putExtra("activitymessage", text))
+            val intent: Intent = Intent(Intent.ACTION_SEND)
+//            startActivity(Intent(this, ReceiveMessageActivity::class.java).putExtra("activitymessage", text))
+            intent.setType("text/plain")
+            intent.putExtra(Intent.EXTRA_TEXT, text)
+            startActivity(intent)
         }
     }
 
