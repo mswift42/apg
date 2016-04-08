@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_stopwatch.*
 class StopwatchActivity : AppCompatActivity() {
     private var seconds: Int = 0
     private var running: Boolean = false
+    private var wasRunning: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,12 +17,14 @@ class StopwatchActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds")
             running = savedInstanceState.getBoolean("running")
+            wasRunning = savedInstanceState.getBoolean("wasRunning")
         }
         runTimer()
     }
     override fun onSaveInstanceState(savedInstanceState: Bundle?) {
         savedInstanceState?.putInt("seconds", seconds)
         savedInstanceState?.putBoolean("running", running)
+        savedInstanceState?.putBoolean("wasRunning", wasRunning)
     }
 
     fun onClickStart(view: View) {
@@ -53,6 +56,11 @@ class StopwatchActivity : AppCompatActivity() {
             }
         }
         handler.post(settimer)
+    }
+    override fun onStop() {
+        super.onStop()
+        wasRunning = running
+        running = false
     }
 
 }
