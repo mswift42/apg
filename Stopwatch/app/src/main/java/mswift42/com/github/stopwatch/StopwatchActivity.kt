@@ -13,10 +13,15 @@ class StopwatchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stopwatch)
+        if (savedInstanceState != null) {
+            seconds = savedInstanceState.getInt("seconds")
+            running = savedInstanceState.getBoolean("running")
+        }
         runTimer()
     }
     override fun onSaveInstanceState(savedInstanceState: Bundle?) {
-
+        savedInstanceState?.putInt("seconds", seconds)
+        savedInstanceState?.putBoolean("running", running)
     }
 
     fun onClickStart(view: View) {
