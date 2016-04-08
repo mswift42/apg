@@ -62,5 +62,11 @@ class StopwatchActivity : AppCompatActivity() {
         wasRunning = running
         running = false
     }
+    override  fun onStart() {
+        super.onStart()
+        if (wasRunning) {
+            running = true
+        }
+    }
 
 }
