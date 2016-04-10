@@ -20,7 +20,7 @@ class DrinkCategoryActivity : ListActivity() {
     }
     public override fun onListItemClick(listView: ListView, itemView: View, position: Int, id: Long) {
         val intent = Intent(this@DrinkCategoryActivity, DrinkActivity::class.java )
-        intent.putExtra(DrinkActivity.EXTRA_DRINKNO, id as Int)
+        intent.putExtra(DrinkActivity.EXTRA_DRINKNO, id.toInt())
         startActivity(intent)
     }
 }
