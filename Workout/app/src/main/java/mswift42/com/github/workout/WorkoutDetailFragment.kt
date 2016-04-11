@@ -17,6 +17,10 @@ import kotlinx.android.synthetic.main.fragment_workout_detail.*
 class WorkoutDetailFragment : Fragment() {
     private var workoutId: Long = 0
 
+    public fun setWorkout(id: Long) {
+        workoutId = id
+    }
+
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -26,15 +30,11 @@ class WorkoutDetailFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         if (view != null) {
-            val title: TextView = textTitle as TextView
+            val title = textTitle
             val workout = Workout.workouts[workoutId.toInt()]
             title.text = workout.name
-            val desc: TextView = textDescription as TextView
-            desc.text = workout.description
+            textDescription.text = workout.description
         }
-    }
-    public fun setWorkout(id: Long): Unit {
-        workoutId = id
     }
 
 }// Required empty public constructor
