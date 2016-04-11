@@ -15,6 +15,11 @@ import android.widget.TextView
  */
 class WorkoutListFragment : ListFragment () {
 
+    internal interface WorkoutListListener {
+        fun itemClicked(id: Long) : Unit
+    }
+    private val listener: WorkoutListListener? = null
+
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
