@@ -3,6 +3,7 @@ package mswift42.com.github.wo4
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentTransaction
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,13 @@ class WorkoutDetailFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         if (savedInstanceState != null) {
             workoutId = savedInstanceState.getLong("workoutId")
+        } else {
+            val ft = childFragmentManager.beginTransaction()
+            val stopwatchfragment = StopWatchFragment()
+            ft.replace(R.id.stopwatch_container, stopwatchfragment)
+            ft.addToBackStack(null)
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            ft.commit()
         }
         // Inflate the layout for this fragment
         return inflater!!.inflate(R.layout.fragment_workout_detail, container, false)
