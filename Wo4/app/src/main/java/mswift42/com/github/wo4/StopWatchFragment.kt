@@ -38,7 +38,32 @@ class StopWatchFragment : Fragment() {
         runTimer(layout)
         return layout
     }
-
+    override public fun onPause() {
+        super.onPause()
+        wasRunning = running
+        running = false
+    }
+    override public fun onResume() {
+        super.onResume();
+        if (wasRunning) {
+            running = true
+        }
+    }
+    override public fun onSaveInstanceState(savedInstanceState: Bundle?) {
+        savedInstanceState!!.putInt("seconds", seconds)
+        savedInstanceState!!.putBoolean("running", running)
+        savedInstanceState!!.putBoolean("wasRunning", wasRunning)
+    }
+    fun onClickStart(view: View) {
+        running = true
+    }
+    fun onClickStop(view: View) {
+        running = false
+    }
+    fun onClickReset(view: View) {
+        running = false
+        seconds = 0
+    }
     private fun runTimer(view: View): Unit {
        val timeView = view.findViewById(R.id.time_view) as TextView
         val handler = Handler()
