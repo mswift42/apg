@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Bits and Pizza</string>
+    <string name="action_settings">Settings</string>
+    <string name="create_order">Create Order</string>
 </resources>
