@@ -7,13 +7,15 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import kotlinx.android.synthetic.main.fragment_stop_watch.*
 
 
 /**
  * A simple [Fragment] subclass.
  */
-class StopWatchFragment : Fragment() {
+class StopWatchFragment : Fragment(), View.OnClickListener {
     private var seconds = 0;
     private var running = false;
     private var wasRunning = false;
@@ -36,7 +38,20 @@ class StopWatchFragment : Fragment() {
         // Inflate the layout for this fragment
         val layout = inflater!!.inflate(R.layout.fragment_stop_watch, container,false)
         runTimer(layout)
+        val startButton = layout.findViewById(R.id.start_button) as Button
+        startButton.setOnClickListener(this)
+        val stopButton = layout.findViewById(R.id.stop_button) as Button
+        stopButton.setOnClickListener(this)
+        val resetButton = layout.findViewById(R.id.reset_button) as Button
+        resetButton.setOnClickListener(this)
         return layout
+    }
+    override fun onClick(view: View) {
+        when (view.getId()) {
+            R.id.start_button -> onClickStart(view)
+            R.id.stop_button ->  onClickStop(view)
+            R.id.reset_button -> onClickReset(view)
+        }
     }
     override public fun onPause() {
         super.onPause()
@@ -50,9 +65,9 @@ class StopWatchFragment : Fragment() {
         }
     }
     override public fun onSaveInstanceState(savedInstanceState: Bundle?) {
-        savedInstanceState!!.putInt("seconds", seconds)
-        savedInstanceState!!.putBoolean("running", running)
-        savedInstanceState!!.putBoolean("wasRunning", wasRunning)
+        savedInstanceState?.putInt("seconds", seconds)
+        savedInstanceState?.putBoolean("running", running)
+        savedInstanceState?.putBoolean("wasRunning", wasRunning)
     }
     fun onClickStart(view: View) {
         running = true
