@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Wo4</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>
