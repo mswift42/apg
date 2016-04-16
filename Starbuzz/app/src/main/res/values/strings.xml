@@ -6,4 +6,8 @@
         <item>Food</item>
         <item>Stores</item>
     </string-array>
+    <string-array name="somelist">
+        <item>first item</item>
+        <item>second item</item>
+    </string-array>
 </resources>
